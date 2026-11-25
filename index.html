@@ -1,0 +1,590 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ban Se Hun | Portfolio</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  background: #f4f7fb;
+  color: #172b42;
+  line-height: 1.7;
+}
+
+.container {
+  width: 1100px;
+  max-width: 95%;
+  margin: auto;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: #173b66;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  font-size: 15px;
+  color: #53677e;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-links a:hover {
+  color: #2878c7;
+}
+
+/* Hero */
+.hero {
+  margin-top: 20px;
+  padding: 85px 60px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #10263e, #234c76);
+  color: white;
+}
+
+.badge {
+  display: inline-block;
+  padding: 7px 15px;
+  border: 1px solid #6685a5;
+  border-radius: 30px;
+  color: #d6e9ff;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.hero h1 {
+  font-size: 64px;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.hero h2 {
+  font-size: 28px;
+  color: #a9d4ff;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  color: #d8e5f2;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 13px 25px;
+  background: #d9ebff;
+  color: #153656;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Common Sections */
+section {
+  padding: 80px 0;
+}
+
+.section-title {
+  margin-bottom: 35px;
+}
+
+.section-title small {
+  color: #3983c8;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.section-title h2 {
+  font-size: 36px;
+  margin-top: 5px;
+}
+
+/* About */
+.about-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 8px 30px rgba(30,60,90,0.05);
+}
+
+.about-card p {
+  color: #52657a;
+  font-size: 18px;
+}
+
+.about-card strong {
+  color: #1b4c7c;
+}
+
+/* Interests */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid #e7edf4;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(30,60,90,0.08);
+}
+
+.card-icon {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 23px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #64768a;
+  font-size: 16px;
+}
+
+/* Football */
+.football-section {
+  background: #eaf1f8;
+  border-radius: 30px;
+  padding: 55px 40px;
+}
+
+.football-intro {
+  color: #60758b;
+  font-size: 17px;
+  margin-bottom: 35px;
+}
+
+.player-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.player-card {
+  background: white;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(30,60,90,0.08);
+  transition: 0.3s;
+}
+
+.player-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Player Images */
+.player-image {
+  width: 100%;
+  height: 620px;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  background: #101820;
+}
+
+.player-info {
+  padding: 30px;
+}
+
+.player-number {
+  font-size: 13px;
+  font-weight: 800;
+  color: #3983c8;
+  letter-spacing: 2px;
+}
+
+.player-info h3 {
+  font-size: 30px;
+  margin: 8px 0;
+}
+
+.player-info h4 {
+  font-size: 14px;
+  color: #8293a5;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+
+.player-info p {
+  color: #607185;
+  font-size: 16px;
+}
+
+/* Football Quote */
+.football-quote {
+  text-align: center;
+  margin-top: 35px;
+  padding: 30px;
+  border-radius: 18px;
+  background: #173b5e;
+  color: white;
+}
+
+.football-quote p {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.football-quote small {
+  display: block;
+  color: #a9d4ff;
+  margin-top: 10px;
+}
+
+/* Strengths */
+.strengths {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.strength {
+  text-align: center;
+  padding: 30px;
+  background: #eaf3fc;
+  border-radius: 18px;
+}
+
+.strength h3 {
+  color: #1e5b91;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.strength p {
+  color: #5b7188;
+}
+
+/* Future Goal */
+.goal {
+  background: #173b5e;
+  color: white;
+  border-radius: 25px;
+  padding: 55px;
+  text-align: center;
+}
+
+.goal h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.goal p {
+  max-width: 800px;
+  margin: auto;
+  color: #d4e4f4;
+  font-size: 18px;
+}
+
+.goal .quote {
+  margin-top: 25px;
+  font-size: 15px;
+  color: #a9d4ff;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px 0;
+  color: #7a8b9c;
+  font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Navigation -->
+<nav>
+  <div class="logo">SE HUN BAN.</div>
+
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#interests">Interests</a>
+    <a href="#football">Football</a>
+    <a href="#strengths">Strengths</a>
+    <a href="#goal">Goal</a>
+  </div>
+</nav>
+
+<!-- Main -->
+<header class="hero">
+  <span class="badge">DANKOOK UNIVERSITY · NURSING</span>
+
+  <h1>Hello,<br>I'm Se Hun.</h1>
+
+  <h2>Future Nurse 🩺</h2>
+
+  <p>
+    디지털 기술을 활용하면서도 환자의 마음을 이해하고,<br>
+    따뜻한 소통으로 신뢰받는 간호사를 꿈꿉니다.
+  </p>
+
+  <a href="#about" class="hero-button">
+    Explore My Story →
+  </a>
+</header>
+
+<!-- About Me -->
+<section id="about">
+
+  <div class="section-title">
+    <small>01 · ABOUT ME</small>
+    <h2>저를 소개합니다</h2>
+  </div>
+
+  <div class="about-card">
+    <p>
+      안녕하세요. <strong>단국대학교 간호학과 2학년에 재학 중인 반세훈</strong>입니다.
+      저는 사람들과 소통하는 것을 좋아하고, 서로 협력하며 함께 성장하는 과정에서
+      큰 즐거움을 느낍니다. 평소 탁구와 축구를 즐기며 음악 감상, 여행, 운동을 통해
+      새로운 경험과 활력을 얻고 있습니다.
+      <br><br>
+      저의 강점은 <strong>책임감, 공감 능력, 협업 능력</strong>입니다.
+      맡은 일에 책임감을 가지고 임하며, 다른 사람의 입장에서 생각하고
+      원활하게 소통하려 노력합니다.
+    </p>
+  </div>
+
+</section>
+
+<!-- Interests -->
+<section id="interests">
+
+  <div class="section-title">
+    <small>02 · MY INTERESTS</small>
+    <h2>제가 좋아하는 것</h2>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-icon">🏓</div>
+      <h3>탁구</h3>
+      <p>
+        집중력과 순발력을 기르고, 끊임없이 실력을 발전시키는
+        과정에서 즐거움을 느낍니다.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">⚽</div>
+      <h3>축구</h3>
+      <p>
+        축구를 즐기며 선수들의 플레이와 팀워크를 보는 것을 좋아합니다.
+        특히 호날두와 메시를 가장 좋아합니다.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🎧</div>
+      <h3>음악 & 여행</h3>
+      <p>
+        음악을 들으며 여유를 즐기고, 새로운 장소와 문화를 경험하며
+        시야를 넓히는 것을 좋아합니다.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Football Heroes -->
+<section id="football">
+
+  <div class="football-section">
+
+    <div class="section-title">
+      <small>03 · MY FOOTBALL HEROES</small>
+      <h2>제가 좋아하는 축구 선수</h2>
+    </div>
+
+    <p class="football-intro">
+      축구를 좋아하는 이유 중 하나는 선수마다 다른 스타일과 매력을 느낄 수 있기 때문입니다.
+      그중에서도 크리스티아누 호날두와 리오넬 메시를 가장 좋아합니다.
+    </p>
+
+    <div class="player-grid">
+
+      <!-- Ronaldo : 그림1.png -->
+      <div class="player-card">
+
+        <img
+          class="player-image"
+          src="./그림1.png"
+          alt="크리스티아누 호날두"
+        >
+
+        <div class="player-info">
+          <span class="player-number">01 · LEGEND</span>
+
+          <h3>Cristiano Ronaldo</h3>
+
+          <h4>PASSION · DISCIPLINE · AMBITION</h4>
+
+          <p>
+            끊임없는 노력과 자기관리, 그리고 포기하지 않는 열정이
+            인상적인 선수입니다. 목표를 향해 끊임없이 도전하는
+            모습에서 많은 영감을 받습니다.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Messi : 그림2.png -->
+      <div class="player-card">
+
+        <img
+          class="player-image"
+          src="./그림2.png"
+          alt="리오넬 메시"
+        >
+
+        <div class="player-info">
+          <span class="player-number">02 · LEGEND</span>
+
+          <h3>Lionel Messi</h3>
+
+          <h4>CREATIVITY · TALENT · MAGIC</h4>
+
+          <p>
+            뛰어난 창의성과 섬세한 플레이, 경기의 흐름을 바꾸는
+            능력이 매력적인 선수입니다. 자신만의 스타일로 축구를
+            즐기는 모습이 인상적입니다.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="football-quote">
+      <p>
+        "Two legends, two different styles, one love for football."
+      </p>
+
+      <small>축구를 향한 하나의 열정</small>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Strengths -->
+<section id="strengths">
+
+  <div class="section-title">
+    <small>04 · MY STRENGTHS</small>
+    <h2>저의 강점</h2>
+  </div>
+
+  <div class="strengths">
+
+    <div class="strength">
+      <h3>💪 책임감</h3>
+      <p>
+        맡은 역할을 끝까지 수행하고
+        신뢰를 쌓기 위해 노력합니다.
+      </p>
+    </div>
+
+    <div class="strength">
+      <h3>💙 공감 능력</h3>
+      <p>
+        상대방의 감정과 입장을 이해하고
+        진심으로 소통하려 합니다.
+      </p>
+    </div>
+
+    <div class="strength">
+      <h3>🤝 협업 능력</h3>
+      <p>
+        서로의 의견을 존중하며
+        공동의 목표를 위해 함께 노력합니다.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Future -->
+<section id="goal">
+
+  <div class="section-title">
+    <small>05 · MY FUTURE</small>
+    <h2>제가 꿈꾸는 미래</h2>
+  </div>
+
+  <div class="goal">
+
+    <h2>A Nurse With Empathy & Technology</h2>
+
+    <p>
+      빠르게 발전하는 디지털 기술을 간호에 적극적으로 활용하여
+      더 정확하고 효율적인 간호를 제공하고 싶습니다.
+      하지만 기술만큼 중요한 것은 환자의 마음을 이해하는 것이라고 생각합니다.
+      전문성과 따뜻한 공감 능력을 함께 갖추어 환자에게 신뢰와 안정을 주는
+      간호사로 성장하겠습니다.
+    </p>
+
+    <div class="quote">
+      "Technology can support care, but empathy makes it human."
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2026 Ban Se Hun · Personal Portfolio</p>
+  <p>Dankook University Nursing Student</p>
+</footer>
+
+</div>
+
+</body>
+</html>
